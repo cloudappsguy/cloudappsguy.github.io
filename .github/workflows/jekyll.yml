@@ -38,8 +38,23 @@ jobs:
         uses: ruby/setup-ruby@4a9ddd6f338a97768b8006bf671dfbad383215f4
         with:
           ruby-version: '3.4.1' # Not needed with a .ruby-version file
-          bundler-cache: true # runs 'bundle install' and caches installed gems automatically
-          cache-version: 1 # Increment this number if you need to re-download cached gems
+          bundler-cache: false # runs 'bundle install' and caches installed gems automatically
+
+      # Add this step to manually cache gems
+      - name: Cache Ruby gems
+        uses: actions/cache@v4 # Or the latest version
+        with:
+          path: vendor/bundle # Standard path for Bundler to install gems locally
+          key: ${{ runner.os }}-gems-${{ hashFiles('**/Gemfile.lock') }}-v1 # Add a version (e.g., -v1) you can increment
+          restore-keys: |
+            ${{ runner.os }}-gems-
+
+      # Add this step to install gems (it will use the cache if available)
+      - name: Install dependencies
+        run: |
+          bundle config path vendor/bundle # Configure Bundler to install gems to the cached path
+          bundle install --jobs 4 --retry 3
+
       - name: Setup Pages
         id: pages
         uses: actions/configure-pages@v5
