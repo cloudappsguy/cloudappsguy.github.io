@@ -17,6 +17,6 @@ My opinions will start to show a bit more concretely in the digital world.  Take
 
 If I can pull together any of my old content from the [wayback machine](https://web.archive.org/) or with the dust bunnies buried on a disk somewhere - I'll get it republished here in an archive section.
 
-Finally - if there is anything you are interested in and would like to me to write about - maybe something we built together, a situation we encountered, my thoughts on why the sky is blue - fire me a message in my contact form and I'll get on it!
+Finally - if there is anything you are interested in and would like to me to write about - maybe something we built together, a situation we encountered, my thoughts on why the sky is blue - fire me a message in my [contact form](/contact) and I'll get on it!
 
 Thanks - enjoy the ride.
